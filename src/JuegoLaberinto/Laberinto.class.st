@@ -21,6 +21,12 @@ Laberinto >> eliminarHabitacion:unaHabitacion [
 	self habitaciones remove:unaHabitacion ifAbsent:["no existe ese objeto habitacion"]
 ]
 
+{ #category : #caminar }
+Laberinto >> entrar [
+	"Que significa entrar en el laberinto??? entrar en la habitacion 1"
+	
+]
+
 { #category : #accessing }
 Laberinto >> habitaciones [
 

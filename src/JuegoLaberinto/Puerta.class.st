@@ -24,6 +24,12 @@ Puerta >> abierta: anObject [
 	abierta := anObject
 ]
 
+{ #category : #caminar }
+Puerta >> entrar [ 
+	"Comprobar si abierta"
+	Transcript show: 'Te has chocado con una puerta';cr.
+]
+
 { #category : #initialization }
 Puerta >> initialize [ 
 	abierta:=false.

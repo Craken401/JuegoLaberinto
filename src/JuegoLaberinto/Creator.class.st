@@ -9,7 +9,14 @@ Class {
 
 { #category : #'factory method' }
 Creator >> fabricarHabitacion:unNum [
-	^Habitacion new num:unNum
+	|hab|
+	hab:=Habitacion new num:unNum.
+	hab este:self fabricarPared.
+	hab oeste:self fabricarPared.
+	hab norte:self fabricarPared.
+	hab sur:self fabricarPared.
+	 
+	^hab
 ]
 
 { #category : #'factory method' }
