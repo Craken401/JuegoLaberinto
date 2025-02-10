@@ -11,7 +11,7 @@ Class {
 		'este',
 		'oeste'
 	],
-	#category : #JuegoLaberinto
+	#category : #'JuegoLaberinto-Laberinto'
 }
 
 { #category : #accessing }

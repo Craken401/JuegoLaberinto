@@ -9,7 +9,7 @@ Class {
 		'lado1',
 		'lado2'
 	],
-	#category : #JuegoLaberinto
+	#category : #'JuegoLaberinto-Laberinto'
 }
 
 { #category : #accessing }
@@ -22,6 +22,12 @@ Puerta >> abierta [
 Puerta >> abierta: anObject [
 
 	abierta := anObject
+]
+
+{ #category : #initialization }
+Puerta >> initialize [ 
+	abierta:=false.
+	"self abierta:false"
 ]
 
 { #category : #accessing }

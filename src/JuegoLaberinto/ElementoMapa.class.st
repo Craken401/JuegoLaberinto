@@ -4,7 +4,7 @@ A
 Class {
 	#name : #ElementoMapa,
 	#superclass : #Object,
-	#category : #JuegoLaberinto
+	#category : #'JuegoLaberinto-Laberinto'
 }
 
 { #category : #caminar }
