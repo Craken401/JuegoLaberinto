@@ -44,3 +44,8 @@ Laberinto >> initialize [
     habitaciones := OrderedCollection new.
 
 ]
+
+{ #category : #habitaciones }
+Laberinto >> obtenerHabitacion: unNum [
+  ^self habitaciones detect:[:each | each num = unNum ] ifNone: [ nil ].
+]

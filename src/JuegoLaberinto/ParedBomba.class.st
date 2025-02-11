@@ -1,5 +1,5 @@
 "
-Subclase de pared con bomba
+ParedBomba es una subclase de Pared que tiene una variable de instancia que se llama activa.
 "
 Class {
 	#name : #ParedBomba,

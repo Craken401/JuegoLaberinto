@@ -1,5 +1,5 @@
 "
-A
+Es un elemento mapa que une 2 lados que son de tipo elemento mapa a su vez y que tiene ""abierta""
 "
 Class {
 	#name : #Puerta,
@@ -26,8 +26,10 @@ Puerta >> abierta: anObject [
 
 { #category : #caminar }
 Puerta >> entrar [ 
-	"Comprobar si abierta"
-	Transcript show: 'Te has chocado con una puerta';cr.
+	self abierta 
+	ifTrue:[ Transcript show: 'La puerta esta abierta';cr ]
+	ifFalse:[ Transcript show: 'La puerta esta cerrada';cr ].
+	
 ]
 
 { #category : #initialization }

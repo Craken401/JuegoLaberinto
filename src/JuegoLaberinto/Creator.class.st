@@ -1,5 +1,5 @@
 "
-coment
+Creator crea laberintos con Pared normal
 "
 Class {
 	#name : #Creator,

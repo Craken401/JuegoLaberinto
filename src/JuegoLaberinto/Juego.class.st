@@ -55,6 +55,7 @@ Juego >> crearLaberinto2Habitaciones [
 
 { #category : #laberintos }
 Juego >> crearLaberinto2HabitacionesFM:unFM [
+"unFM debe ser una instancia de creator"
 
 	| hab1 hab2 puerta |
 	
@@ -106,4 +107,12 @@ Juego >> laberinto [
 Juego >> laberinto: anObject [
 
 	laberinto := anObject
+]
+
+{ #category : #accessing }
+Juego >> obtenerHabitacion:unNum [
+
+ "delegar y devolver lo que le de laberinto"
+ ^self laberinto obtenerHabitacion:unNum
+ 
 ]
