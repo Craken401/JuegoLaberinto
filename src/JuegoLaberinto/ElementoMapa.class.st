@@ -1,5 +1,5 @@
 "
-A
+Es la interfaz comun de los elementos del mapa
 "
 Class {
 	#name : #ElementoMapa,

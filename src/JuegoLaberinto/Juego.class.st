@@ -63,7 +63,7 @@ Juego >> crearLaberinto2HabitacionesFM:unFM [
 	hab1 oeste:unFM fabricarPared.
 	hab1 norte:unFM fabricarPared."
 	
-	hab2:=unFM new fabricarHabitacion: 2.
+	hab2:=unFM fabricarHabitacion: 2.
 	"hab2 sur:unFM fabricarPared.
 	hab2 este:unFM fabricarPared.
 	hab2 oeste:unFM fabricarPared."
@@ -75,7 +75,7 @@ Juego >> crearLaberinto2HabitacionesFM:unFM [
 	hab1 sur:puerta.
 	hab2 norte:puerta.
 	
-	self laberinto:unFM fabricarPuerta.
+	self laberinto:unFM fabricarLaberinto.
 	self laberinto agregarHabitacion: hab1.
 	self laberinto agregarHabitacion: hab2.
 	
