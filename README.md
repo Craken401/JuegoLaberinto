@@ -2,6 +2,9 @@
 
 Este repositorio contiene la implementación del Juego del Laberinto en **Pharo Smalltalk**, aplicando diferentes patrones de diseño y arquitectura orientada a objetos.
 
+![image](https://github.com/user-attachments/assets/3fd4734c-9740-486b-a580-8db21b82ccf6)
+
+
 ## 🏗️ Estructura del Proyecto
 
 El proyecto se basa en las siguientes clases:
