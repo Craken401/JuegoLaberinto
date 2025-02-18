@@ -1,39 +1,43 @@
-# 🏰 Juego del Laberinto WIP (Work In Progress) en Smalltalk
+# 🏰 Juego del Laberinto en Smalltalk
 
-Este repositorio contiene la implementación del Juego del Laberinto en **Pharo Smalltalk**, aplicando diferentes patrones de diseño y arquitectura orientada a objetos.
+Este repositorio contiene la versión original del **Juego del Laberinto** en **Pharo Smalltalk**, donde se han aplicado patrones de diseño para estructurar el juego de manera modular y flexible.
 
-![image](https://github.com/user-attachments/assets/3fd4734c-9740-486b-a580-8db21b82ccf6)
+## 📌 Estructura del Proyecto
 
+El juego se compone de las siguientes clases:
 
-## 🏗️ Estructura del Proyecto
+- **`Juego`**: Contiene la instancia de `Laberinto` y gestiona los `Bichos`.
+- **`Laberinto`**: Colección de habitaciones (`Habitacion`).
+- **`Habitacion`**: Define los cuartos del laberinto con sus conexiones (`norte`, `sur`, `este`, `oeste`).
+- **`ElementoMapa`**: Superclase de los elementos (`Pared`, `Puerta`, `Habitacion`).
+- **`Puerta`**: Conecta habitaciones y puede abrirse o cerrarse.
+- **`Pared`**: Representa los muros del laberinto.
+- **`ParedBomba`**: Variante de `Pared` que explota si está activa.
+- **`Bicho`**: Representa enemigos en el laberinto y puede ser:
+  - `Agresivo`: Se mueve rápido y tiene mayor poder.
+  - `Perezoso`: Se mueve lento y tiene menor poder.
 
-El proyecto se basa en las siguientes clases:
-
-- **Juego**: Representa el juego y contiene una instancia de `Laberinto`.
-- **Laberinto**: Contiene una colección de habitaciones (`Habitacion`).
-- **Habitacion**: Define las habitaciones del laberinto, con sus conexiones (`norte`, `sur`, `este`, `oeste`).
-- **ElementoMapa**: Superclase de todos los elementos del laberinto.
-- **Pared**: Representa los muros dentro del laberinto.
-- **Puerta**: Conecta dos habitaciones y puede estar abierta o cerrada.
+---
 
 ## 🏛️ Patrones de Diseño Implementados
 
 ### 🔨 Factory Method
-- Implementado en `Creator` para la creación de elementos como habitaciones, paredes y puertas.
-- Facilita la extensión del código y permite generar diferentes tipos de laberintos.
+- Implementado en `Creator`, que genera habitaciones, paredes y puertas.
+- También existe `CreatorB`, que fabrica **paredes con bombas**.
 
 ### 🎭 Decorator
-- Implementado con `DecoradorElementoMapa` y `Hechizo`.
-- Permite aplicar encantamientos a `Puerta` y `Habitacion` sin modificar su código original.
+- Implementado con `ParedBomba`, que **decora** una `Pared` con una explosión al activarse.
 
 ### ♟️ Strategy
-- Implementado con `EstrategiaMovimiento`.
-- Define distintas formas de moverse dentro del laberinto, como movimiento aleatorio o dirigido.
+- Implementado en `Modo`, que define la estrategia de los `Bichos` (`Agresivo` o `Perezoso`).
+
+---
 
 ## 🚀 Cómo Ejecutarlo en Pharo
+
 1. Clonar este repositorio en **Pharo Iceberg**.
 2. Cargar el paquete `JuegoLaberinto`.
-3. Instanciar un `Juego` y explorar la estructura del laberinto.
+3. Instanciar un `Juego` y generar el laberinto:
 
 ```smalltalk
 juego := Juego new.
