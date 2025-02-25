@@ -14,6 +14,11 @@ Class {
 	#category : #'JuegoLaberinto-Laberinto'
 }
 
+{ #category : #consulta }
+Habitacion >> esHabitacion [ 
+	^true
+]
+
 { #category : #accessing }
 Habitacion >> este [
 

@@ -16,6 +16,27 @@ ElementoMapa >> entrar [
 	self subclassResponsibility 
 ]
 
+{ #category : #caminar }
+ElementoMapa >> entrar:alguien [
+	"Deberemos indiciar quien entra en el futuro"
+	self subclassResponsibility 
+]
+
+{ #category : #consulta }
+ElementoMapa >> esHabitacion [
+	^false
+]
+
+{ #category : #consulta }
+ElementoMapa >> esPared [
+	^false
+]
+
+{ #category : #consulta }
+ElementoMapa >> esPuerta [
+	^false
+]
+
 { #category : #accessing }
 ElementoMapa >> padre [
 

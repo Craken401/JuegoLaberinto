@@ -10,7 +10,7 @@ Class {
 { #category : #habitaciones }
 Laberinto >> agregarHabitacion:unaHabitacion [
 
-	self habitaciones add:unaHabitacion
+	self hijos add:unaHabitacion
 ]
 
 { #category : #habitaciones }
