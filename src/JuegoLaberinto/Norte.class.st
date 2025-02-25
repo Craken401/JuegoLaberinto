@@ -5,6 +5,11 @@ Class {
 }
 
 { #category : #'as yet unclassified' }
+Norte >> obtenerElementoOrEn:unContenedor [
+	^unContenedor norte 
+]
+
+{ #category : #'as yet unclassified' }
 Norte >> ponerElemento:unEM en:unContenedor [
 	unContenedor norte:unEM
 ]

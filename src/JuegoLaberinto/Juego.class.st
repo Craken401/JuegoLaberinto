@@ -93,7 +93,7 @@ Juego >> crearLaberinto2HabitacionesFM:unFM [
 	puerta lado2:hab2.
 	
 	hab1 ponerEnOr:unFM fabricarSur elemento:puerta.
-	hab1 ponerEnOr:unFM fabricarNorte elemento:puerta.
+	hab2 ponerEnOr:unFM fabricarNorte elemento:puerta.
 	
 	
 	"hab1 sur:puerta.

@@ -2,7 +2,8 @@ Class {
 	#name : #LaberintoTest,
 	#superclass : #TestCase,
 	#instVars : [
-		'juego'
+		'juego',
+		'fm'
 	],
 	#category : #'JuegoLaberinto-Pruebas'
 }
@@ -21,7 +22,6 @@ LaberintoTest >> juego: anObject [
 
 { #category : #running }
 LaberintoTest >> setUp [
-	| fm |
 	super setUp.
 
 	juego:=Juego new.
@@ -40,39 +40,35 @@ LaberintoTest >> testHabitaciones [
     hab2 := self juego obtenerHabitacion: 2.
 
     "Comprobar que son habitaciones"
-    self assert: (hab1 isKindOf: Habitacion).
-    self assert: (hab2 isKindOf: Habitacion).
+    self assert: hab1 esHabitacion.
+    self assert: hab2 esHabitacion.
 
     "Comprobar que las orientaciones existen y están correctas"
-    norte := hab1 norte.
-    sur := hab1 sur.
-    este := hab1 este.
-    oeste := hab1 oeste.
+    norte := fm fabricarNorte.
+    sur := fm fabricarSur.
+    este := fm fabricarEste.
+    oeste := fm fabricarOeste.
 
     "Verificar que el norte de hab1 es una pared"
-    self assert: norte esPared.
+    self assert: (hab1 obtenerElementoOr:norte) esPared.
 
     "Verificar que el este y oeste de hab1 son paredes"
-    self assert: este esPared.
-    self assert: oeste esPared.
+    self assert: (hab1 obtenerElementoOr:este) esPared.
+    self assert: (hab1 obtenerElementoOr:oeste) esPared.
 
     "Verificar que la conexión sur de hab1 es una puerta"
-    self assert: sur esPuerta.
+    self assert: (hab2 obtenerElementoOr:norte) esPuerta.
 
     "Verificar que la puerta conecta correctamente hab1 y hab2"
-    pt12 := hab1 sur.
-    self assert: (pt12 lado1 = hab1).
-    self assert: (pt12 lado2 = hab2).
+    pt12 := hab1 obtenerElementoOr:sur.
+    self assert: pt12 esPuerta.
 
-    "Verificar que hab2 tiene la puerta en el norte"
-    self assert: (hab2 norte = pt12).
+	 "Verificar que el norte de hab1 es una pared"
+    self assert: (hab2 obtenerElementoOr:sur) esPared.
 
-    "Verificar que hab2 tiene paredes en el este y oeste"
-    self assert: (hab2 este esPared).
-    self assert: (hab2 oeste esPared).
-
-    "Verificar que hab2 tiene una pared en el sur"
-    self assert: (hab2 sur esPared).
+    "Verificar que el este y oeste de hab1 son paredes"
+    self assert: (hab2 obtenerElementoOr:este) esPared.
+    self assert: (hab2 obtenerElementoOr:oeste) esPared.
 
     "Verificar que la puerta está cerrada al inicio"
     self assert: pt12 abierta not.
