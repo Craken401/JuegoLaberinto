@@ -1,3 +1,6 @@
+"
+Objeto Este
+"
 Class {
 	#name : #Este,
 	#superclass : #Orientacion,
