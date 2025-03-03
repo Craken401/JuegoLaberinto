@@ -1,3 +1,6 @@
+"
+Oeste
+"
 Class {
 	#name : #Oeste,
 	#superclass : #Orientacion,
@@ -12,4 +15,9 @@ Oeste >> obtenerElementoOrEn:unContenedor [
 { #category : #'as yet unclassified' }
 Oeste >> ponerElemento:unEM en:unContenedor [
 	unContenedor oeste:unEM
+]
+
+{ #category : #recorrido }
+Oeste >> recorrer:unBloque contenedor:unContenedor [
+	unContenedor oeste recorrer:unBloque
 ]

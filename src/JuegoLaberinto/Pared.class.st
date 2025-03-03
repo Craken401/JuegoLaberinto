@@ -8,12 +8,18 @@ Class {
 }
 
 { #category : #caminar }
-Pared >> entrar [ 
+Pared >> entrar:alguien [ 
 	"Deberiamos comprobar si esta activa"
-	Transcript show: 'Te has chocado con una pared';cr.
+	Transcript show:alguien printString ; nextPutAll:'ha chocado con una pared ';cr.
 ]
 
 { #category : #consulta }
 Pared >> esPared [ 
 	^true
+]
+
+{ #category : #printing }
+Pared >> printOn:aStream [
+	aStream nextPutAll:'Pared'
+
 ]

@@ -11,6 +11,13 @@ Class {
 	#category : #'JuegoLaberinto-Laberinto'
 }
 
+{ #category : #'as yet unclassified' }
+Juego >> abrirPuertas [
+    "Recorrer todo el laberinto y abrir cada puerta."
+    self laberinto recorrer: [:elemento | elemento esPuerta ifTrue: [ elemento abrir ]
+    ].
+]
+
 { #category : #'gestion-bichos' }
 Juego >> agregarBicho:unBicho [
 	self bichos add:unBicho
@@ -27,6 +34,14 @@ Juego >> bichos [
 Juego >> bichos: anObject [
 
 	bichos := anObject
+]
+
+{ #category : #'as yet unclassified' }
+Juego >> cerrarPuertas [
+    "Recorrer todo el laberinto y cerrar cada puerta."
+    self laberinto recorrer: [:elemento | 
+        elemento esPuerta ifTrue: [ elemento cerrar ]
+    ].
 ]
 
 { #category : #laberintos }

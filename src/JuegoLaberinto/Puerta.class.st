@@ -24,11 +24,31 @@ Puerta >> abierta: anObject [
 	abierta := anObject
 ]
 
+{ #category : #'as yet unclassified' }
+Puerta >> abrir [
+    "Pone la puerta en estado abierta y muestra un mensaje en Transcript"
+    abierta := true.
+    Transcript show: 'Puerta ', self lado1 num asString, '-', self lado2 num asString, ' ABIERTA'; cr.
+]
+
+{ #category : #'as yet unclassified' }
+Puerta >> cerrar [
+    "Pone la puerta en estado cerrada y muestra un mensaje en Transcript"
+    abierta := false.
+    Transcript show: 'Puerta ', self lado1 num asString, '-', self lado2 num asString, ' CERRADA'; cr.
+]
+
 { #category : #caminar }
-Puerta >> entrar [ 
-	self abierta 
-	ifTrue:[ Transcript show: 'La puerta esta abierta';cr ]
-	ifFalse:[ Transcript show: 'La puerta esta cerrada';cr ].
+Puerta >> entrar:alguien [
+	self abierta
+	ifTrue:[
+		alguien posicion = self lado1 ifTrue:[
+			self lado2 entrar:alguien
+			] ifFalse:[
+			self lado1 entrar:alguien
+			]
+		]
+	ifFalse:[Transcript show: 'La puerta está cerrada' ;cr]
 	
 ]
 
@@ -65,4 +85,10 @@ Puerta >> lado2 [
 Puerta >> lado2: anObject [
 
 	lado2 := anObject
+]
+
+{ #category : #printing }
+Puerta >> printOn:aStream [
+
+	aStream nextPutAll:'Puerta-' ; nextPutAll: self lado1 num asString ; nextPutAll:'-'; nextPutAll: self lado2 num asString
 ]

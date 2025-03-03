@@ -22,12 +22,6 @@ ParedBomba >> activa: anObject [
 	activa := anObject
 ]
 
-{ #category : #caminar }
-ParedBomba >> entrar [ 
-	"Deberiamos comprobar si esta activa"
-	Transcript show: 'Te has chocado con una pared bomba';cr.
-]
-
 { #category : #initialization }
 ParedBomba >> initialize [ 
 	activa:=false.
