@@ -9,6 +9,11 @@ Class {
 }
 
 { #category : #'as yet unclassified' }
+Orientacion >> caminar:unBicho [
+	self subclassResponsibility 
+]
+
+{ #category : #'as yet unclassified' }
 Orientacion >> obtenerElementoOrEn:unContenedor [
 	^self subclassResponsibility 
 ]
