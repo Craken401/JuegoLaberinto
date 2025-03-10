@@ -47,7 +47,7 @@ Creator >> fabricarBomba [
 
 { #category : #'as yet unclassified' }
 Creator >> fabricarEste [
-	^Este new
+	^Este default
 ]
 
 { #category : #'factory method' }
@@ -80,12 +80,12 @@ Creator >> fabricarLaberinto [
 
 { #category : #'as yet unclassified' }
 Creator >> fabricarNorte [
-	^Norte new
+	^Norte default
 ]
 
 { #category : #'as yet unclassified' }
 Creator >> fabricarOeste [
-	^Oeste new
+	^Oeste default
 ]
 
 { #category : #'factory method' }
@@ -100,5 +100,5 @@ Creator >> fabricarPuerta [
 
 { #category : #'as yet unclassified' }
 Creator >> fabricarSur [
-	^Sur new
+	^Sur default
 ]
