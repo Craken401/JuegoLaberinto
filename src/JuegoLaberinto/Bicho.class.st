@@ -15,6 +15,12 @@ Bicho >> actua [
 	self modo actua:self
 ]
 
+{ #category : #ataques }
+Bicho >> atacar [
+	self juego buscarPersonaje:self.
+	
+]
+
 { #category : #consulta }
 Bicho >> esAgresivo [ 
 	^self modo esAgresivo 
