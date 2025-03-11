@@ -10,6 +10,13 @@ Class {
 	#category : #'JuegoLaberinto-Laberinto'
 }
 
+{ #category : #ataques }
+Personaje >> atacar [
+    "El personaje ataca a todos los bichos que estén en la misma posición (habitación)."
+    self juego buscarBichos: self.
+
+]
+
 { #category : #'as yet unclassified' }
 Personaje >> caminarHacia: unaOrientacion [
     "Lógica para que el personaje se mueva a la orientación especificada"
@@ -20,15 +27,9 @@ Personaje >> caminarHacia: unaOrientacion [
     unaOrientacion caminar: self.
 ]
 
-{ #category : #'as yet unclassified' }
-Personaje >> esAtacadoPor:unBicho [
-
-	Transcript show:self printString ; nextPutAll: ' es atacado por ' ; nextPutAll: unBicho printString.
-	
-	self vidas:(self vidas-unBicho poder).
-	Transcript show: 'Vidas: ' ; nextPutAll: self vidas asString ; cr.
-	
-	self vidas <= 0 ifTrue:[ self juego muerePersonaje. ]
+{ #category : #ataques }
+Personaje >> heMuerto [ 	
+	self juego muerePersonaje.
 ]
 
 { #category : #accessing }

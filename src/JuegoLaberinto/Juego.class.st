@@ -46,6 +46,17 @@ Juego >> bichos: anObject [
 	bichos := anObject
 ]
 
+{ #category : #'as yet unclassified' }
+Juego >> buscarBichos: unPersonaje [
+
+    "Itera sobre todos los bichos del juego y comprueba si alguno
+     está en la misma posición que unPersonaje. Si es así, lo ataca."
+    self bichos do: [ :unBicho |
+        (unBicho posicion = unPersonaje posicion)
+            ifTrue: [ unBicho esAtacadoPor: unPersonaje ].
+    ].
+]
+
 { #category : #ataques }
 Juego >> buscarPersonaje:unBicho [
 	| posBicho posPerson |
@@ -273,6 +284,19 @@ Juego >> eliminarBicho:unBicho [
 	
 ]
 
+{ #category : #'as yet unclassified' }
+Juego >> estanTodosLosBichosMuertos [
+	| bicho | 
+	
+	bicho :=self bichos detect: [ :each | each estaVivo ] ifNone:[nil].
+	(bicho isNil and:[ self person estaVivo ]) ifTrue:[ self ganaPersonaje ]
+]
+
+{ #category : #'as yet unclassified' }
+Juego >> ganaPersonaje [
+	Transcript show: 'Fin juego: gana el personaje'; cr.
+]
+
 { #category : #accessing }
 Juego >> hilos [
 
@@ -352,6 +376,9 @@ Juego >> person: anObject [
 Juego >> terminarBicho:unBicho [
 	unBicho vidas:0.
 	Transcript show:unBicho printString ; nextPutAll: ' muere';cr.
+	
+	"comprobar si todos los bichos estan muertos ?es nuestra condicion de fin de juego?"
+	self estanTodosLosBichosMuertos
 ]
 
 { #category : #'gestion-bichos' }
