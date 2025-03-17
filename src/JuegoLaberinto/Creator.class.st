@@ -57,14 +57,7 @@ Creator >> fabricarHabitacion:unNum [
 	hab num:unNum.
 	hab agregarOrientacion:self fabricarNorte; agregarOrientacion:self fabricarSur; agregarOrientacion:self fabricarEste; agregarOrientacion:self fabricarOeste.
 	
-	hab orientaciones do:[:each | hab ponerEnOr:each elemento:self fabricarPared].
-	
-	
-"	hab este:self fabricarPared.
-	hab oeste:self fabricarPared.
-	hab norte:self fabricarPared.
-	hab sur:self fabricarPared."
-	 
+	hab orientaciones do:[:each | hab ponerEnOr:each elemento:self fabricarPared]. 
 	^hab
 ]
 
