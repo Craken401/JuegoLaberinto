@@ -348,7 +348,7 @@ Juego >> moverPersonajeHacia: unaOrientacion [
 
 { #category : #ataques }
 Juego >> muerePersonaje [
-	Transcript show: 'Fin del juego'; cr.
+	Transcript show: 'Fin del juego: ganan los bichos'; cr.
 	self terminarBichos.
 ]
 
