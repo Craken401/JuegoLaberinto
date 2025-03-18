@@ -20,6 +20,13 @@ Juego >> abrirPuertas [
     ].
 ]
 
+{ #category : #'as yet unclassified' }
+Juego >> activarBombas [
+   "Recorre todo el laberinto y si encuentra un Bomba, la activa"
+   self laberinto recorrer: [:elemento | 
+      (elemento respondsTo: #esBomba) ifTrue: [(elemento esBomba) ifTrue: [elemento activa: true]] ].
+]
+
 { #category : #'gestion-bichos' }
 Juego >> agregarBicho:unBicho [
 	self bichos add:unBicho.
@@ -276,6 +283,12 @@ Juego >> crearLaberinto4Habitaciones [
     self agregarBicho: bichoVerde1.
     self agregarBicho: bichoVerde2.
 
+]
+
+{ #category : #'as yet unclassified' }
+Juego >> desactivarBombas [
+   self laberinto recorrer: [:elemento | 
+      (elemento respondsTo: #esBomba) ifTrue: [(elemento esBomba) ifTrue: [elemento activa: false]] ].
 ]
 
 { #category : #'gestion-bichos' }

@@ -98,5 +98,5 @@ Director >> procesar:unArchivo [
 	self iniBuilder.
 	self fabricarLaberinto.
 	self fabricarJuego.
-	"self fabricarBichos."
+	self fabricarBichos.
 ]

@@ -31,6 +31,13 @@ Bomba >> entrar:alguien [
 	
 ]
 
+{ #category : #'as yet unclassified' }
+Bomba >> esBomba [
+   ^true
+
+"Bomba ya tiene la variable 'activa', con getters y setters"
+]
+
 { #category : #initialization }
 Bomba >> initialize [ 
 	activa:=false.

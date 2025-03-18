@@ -46,7 +46,7 @@ LaberintoBuilder >> fabricarBichoModo:strModo posicion:unNum [
 	
 	"strModo='Agresivo' ifTrue:[self fabricarBichoAgresivo]"
 	
-	bicho:=self perform:('fabricar', strModo) asSymbol.
+	bicho:=self perform:('fabricarBicho', strModo) asSymbol.
 	hab entrar:bicho.
 	
 	self juego agregarBicho: bicho.

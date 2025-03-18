@@ -13,7 +13,8 @@ Modo >> actua:unBicho [
 	
 	self dormir:unBicho.
 	self caminar:unBicho.
-	self atacar:unBicho
+	self atacar:unBicho.
+	(Delay forSeconds: 0.2) wait.  "Para no saturar Transcript"
 ]
 
 { #category : #'as yet unclassified' }

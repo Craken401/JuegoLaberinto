@@ -32,6 +32,26 @@ Personaje >> heMuerto [
 	self juego muerePersonaje.
 ]
 
+{ #category : #'as yet unclassified' }
+Personaje >> irAlEste [
+   self caminarHacia: Este default.
+]
+
+{ #category : #'as yet unclassified' }
+Personaje >> irAlNorte [
+   self caminarHacia: Norte default.
+]
+
+{ #category : #'as yet unclassified' }
+Personaje >> irAlOeste [
+   self caminarHacia: Oeste default.
+]
+
+{ #category : #'as yet unclassified' }
+Personaje >> irAlSur [
+   self caminarHacia: Sur default.
+]
+
 { #category : #accessing }
 Personaje >> nombre [
 
