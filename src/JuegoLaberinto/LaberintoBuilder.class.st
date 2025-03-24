@@ -148,6 +148,13 @@ LaberintoBuilder >> fabricarSur [
 	^Sur default
 ]
 
+{ #category : #'metodos fabricacion' }
+LaberintoBuilder >> fabricarTunelEn:unContenedor [
+	| tunel |
+		tunel:= Tunel new.
+		unContenedor agregarHijo: tunel.
+]
+
 { #category : #accessing }
 LaberintoBuilder >> juego [
 
