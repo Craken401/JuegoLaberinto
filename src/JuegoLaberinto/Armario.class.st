@@ -18,3 +18,8 @@ alguien posicion: self.
    "poner un flag de 'escondido', 
     o un check que impida que le ataquen los bichos"
 ]
+
+{ #category : #consulta }
+Armario >> esArmario [ 
+^true
+]

@@ -16,6 +16,11 @@ ElementoMapa >> entrar:alguien [
 ]
 
 { #category : #consulta }
+ElementoMapa >> esArmario [
+	^false
+]
+
+{ #category : #consulta }
 ElementoMapa >> esHabitacion [
 	^false
 ]
