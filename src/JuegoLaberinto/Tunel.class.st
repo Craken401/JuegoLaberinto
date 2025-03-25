@@ -10,6 +10,11 @@ Class {
 	#category : #'JuegoLaberinto-Laberinto'
 }
 
+{ #category : #consulta }
+Tunel >> esTunel [ 
+	^true
+]
+
 { #category : #accessing }
 Tunel >> laberinto [
 
