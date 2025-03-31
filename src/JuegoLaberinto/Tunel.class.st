@@ -10,6 +10,12 @@ Class {
 	#category : #'JuegoLaberinto-Laberinto'
 }
 
+{ #category : #caminar }
+Tunel >> entrar:alguien [
+	self laberinto:alguien juegoClonaLaberinto. "juego prototipo deepCopy".
+	self laberinto entrar:alguien.
+]
+
 { #category : #consulta }
 Tunel >> esTunel [ 
 	^true

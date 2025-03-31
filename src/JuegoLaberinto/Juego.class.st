@@ -8,7 +8,8 @@ Class {
 		'laberinto',
 		'bichos',
 		'hilos',
-		'person'
+		'person',
+		'prototipo'
 	],
 	#category : #'JuegoLaberinto-Laberinto'
 }
@@ -79,6 +80,11 @@ Juego >> cerrarPuertas [
     self laberinto recorrer: [:elemento | 
         elemento esPuerta ifTrue: [ elemento cerrar ]
     ].
+]
+
+{ #category : #prototype }
+Juego >> clonarLaberinto [
+	^self prototipo veryDeepCopy.
 ]
 
 { #category : #laberintos }
@@ -383,6 +389,18 @@ Juego >> person [
 Juego >> person: anObject [
 
 	person := anObject
+]
+
+{ #category : #accessing }
+Juego >> prototipo [
+
+	^ prototipo
+]
+
+{ #category : #accessing }
+Juego >> prototipo: anObject [
+
+	prototipo := anObject
 ]
 
 { #category : #'gestion-bichos' }

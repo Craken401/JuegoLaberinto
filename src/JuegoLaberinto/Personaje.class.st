@@ -52,6 +52,11 @@ Personaje >> irAlSur [
    self caminarHacia: Sur default.
 ]
 
+{ #category : #'as yet unclassified' }
+Personaje >> juegoClonaLaberinto [
+	^self juego clonarLaberinto
+]
+
 { #category : #accessing }
 Personaje >> nombre [
 

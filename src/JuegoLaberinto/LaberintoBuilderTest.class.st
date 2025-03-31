@@ -84,7 +84,7 @@ LaberintoBuilderTest >> comprobarPuertaDe:unNum orientacion:unaOr a:otroNum orie
 { #category : #'as yet unclassified' }
 LaberintoBuilderTest >> comprobarTunelEn:unContenedor [	
 	self assert:((unContenedor hijos detect:[:each | each esTunel ] ifNone:[nil]) esTunel).
-
+	"comprobar que funciona el Proxy virtual"
 ]
 
 { #category : #accessing }

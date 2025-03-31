@@ -33,6 +33,9 @@ Contenedor >> eliminarHijo:unEM [
 Contenedor >> entrar:alguien [
 	Transcript show:alguien printString ; nextPutAll: 'esta en ' ; nextPutAll: self printString ;cr.
 		alguien posicion:self.
+		
+	"para los bichos: buscar elemento (por ejemplo tunel)"
+	"delegar en el bicho (en su modo) el entrar o no en el tunel"
 ]
 
 { #category : #accessing }

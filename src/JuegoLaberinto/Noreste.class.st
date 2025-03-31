@@ -1,5 +1,5 @@
 Class {
 	#name : #Noreste,
 	#superclass : #Orientacion,
-	#category : #'JuegoLaberinto-Builder'
+	#category : #'JuegoLaberinto-Laberinto'
 }
