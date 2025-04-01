@@ -27,6 +27,11 @@ Personaje >> caminarHacia: unaOrientacion [
     unaOrientacion caminar: self.
 ]
 
+{ #category : #'as yet unclassified' }
+Personaje >> crearNuevoLaberinto:unTunel [
+	unTunel crearNuevoLaberinto:self.
+]
+
 { #category : #ataques }
 Personaje >> heMuerto [ 	
 	self juego muerePersonaje.
@@ -50,11 +55,6 @@ Personaje >> irAlOeste [
 { #category : #'as yet unclassified' }
 Personaje >> irAlSur [
    self caminarHacia: Sur default.
-]
-
-{ #category : #'as yet unclassified' }
-Personaje >> juegoClonaLaberinto [
-	^self juego clonarLaberinto
 ]
 
 { #category : #accessing }
