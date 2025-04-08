@@ -65,7 +65,8 @@ Contenedor >> hijos: anObject [
 
 { #category : #initialization }
 Contenedor >> initialize [ 
-	hijos:=OrderedCollection new.
+	super initialize.
+	hijos := OrderedCollection new.
 	
 ]
 

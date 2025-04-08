@@ -62,6 +62,14 @@ Personaje >> nombre: anObject [
 	nombre := anObject
 ]
 
+{ #category : #comandos }
+Personaje >> obtenerComandos [
+	| lista |
+	lista := OrderedCollection new.
+	self posicion recorrer: [:each | lista addAll: each obtenerComandos ].
+	^ lista
+]
+
 { #category : #ataques }
 Personaje >> puedeAtacar [
     "El personaje ataca a todos los bichos que estén en la misma posición (habitación)."
