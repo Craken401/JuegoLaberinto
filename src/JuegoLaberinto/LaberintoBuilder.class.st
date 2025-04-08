@@ -163,6 +163,7 @@ LaberintoBuilder >> fabricarSur [
 LaberintoBuilder >> fabricarTunelEn:unContenedor [
 	| tunel |
 		tunel:= Tunel new.
+		tunel agregarComando:(Entrar new receptor:tunel).
 		unContenedor agregarHijo: tunel.
 ]
 

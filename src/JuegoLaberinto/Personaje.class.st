@@ -11,10 +11,8 @@ Class {
 }
 
 { #category : #ataques }
-Personaje >> atacar [
-    "El personaje ataca a todos los bichos que estén en la misma posición (habitación)."
-    self juego buscarBichos: self.
-
+Personaje >> avisar [
+	self juego muerePersonaje.
 ]
 
 { #category : #'as yet unclassified' }
@@ -30,11 +28,6 @@ Personaje >> caminarHacia: unaOrientacion [
 { #category : #'as yet unclassified' }
 Personaje >> crearNuevoLaberinto:unTunel [
 	unTunel crearNuevoLaberinto:self.
-]
-
-{ #category : #ataques }
-Personaje >> heMuerto [ 	
-	self juego muerePersonaje.
 ]
 
 { #category : #'as yet unclassified' }
@@ -67,4 +60,11 @@ Personaje >> nombre [
 Personaje >> nombre: anObject [
 
 	nombre := anObject
+]
+
+{ #category : #ataques }
+Personaje >> puedeAtacar [
+    "El personaje ataca a todos los bichos que estén en la misma posición (habitación)."
+    self juego buscarBichos: self.
+
 ]
