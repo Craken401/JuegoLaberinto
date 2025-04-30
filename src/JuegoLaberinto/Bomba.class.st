@@ -10,6 +10,11 @@ Class {
 	#category : #'JuegoLaberinto-Laberinto'
 }
 
+{ #category : #visitor }
+Bomba >> aceptar:unVisitor [
+	unVisitor visitarBomba:self
+]
+
 { #category : #accessing }
 Bomba >> activa [
 
@@ -20,6 +25,12 @@ Bomba >> activa [
 Bomba >> activa: anObject [
 
 	activa := anObject
+]
+
+{ #category : #accessing }
+Bomba >> activar [
+	Transcript show: 'Bomba activa';cr.
+	self activa:true
 ]
 
 { #category : #caminar }
@@ -41,4 +52,9 @@ Bomba >> esBomba [
 { #category : #initialization }
 Bomba >> initialize [ 
 	activa:=false.
+]
+
+{ #category : #printing }
+Bomba >> printOn:aStream [
+	aStream nextPutAll:'Bomba'
 ]

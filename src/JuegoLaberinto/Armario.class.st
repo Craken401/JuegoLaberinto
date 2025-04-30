@@ -23,3 +23,8 @@ alguien posicion: self.
 Armario >> esArmario [ 
 ^true
 ]
+
+{ #category : #'as yet unclassified' }
+Armario >> visitarContenedor:unVisitor [
+	unVisitor visitarArmario:self
+]

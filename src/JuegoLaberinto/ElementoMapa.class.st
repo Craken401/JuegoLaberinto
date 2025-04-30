@@ -11,6 +11,11 @@ Class {
 	#category : #'JuegoLaberinto-Laberinto'
 }
 
+{ #category : #visitor }
+ElementoMapa >> aceptar:unVisitor [
+	self subclassResponsibility 
+]
+
 { #category : #comandos }
 ElementoMapa >> agregarComando:unComando [
 	self comandos add:unComando

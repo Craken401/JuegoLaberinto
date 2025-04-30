@@ -7,6 +7,13 @@ Class {
 	#category : #'JuegoLaberinto-Laberinto'
 }
 
+{ #category : #recorrido }
+Laberinto >> aceptar:unVisitor [
+	self hijos do:[:each | each aceptar:unVisitor].
+	"no tiene forma, luego no recorrer las orientaciones"
+
+]
+
 { #category : #habitaciones }
 Laberinto >> agregarHabitacion:unaHabitacion [
 
