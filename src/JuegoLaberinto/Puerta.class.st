@@ -7,7 +7,8 @@ Class {
 	#instVars : [
 		'lado1',
 		'lado2',
-		'estado'
+		'estado',
+		'visitada'
 	],
 	#category : #'JuegoLaberinto-Laberinto'
 }
@@ -16,6 +17,21 @@ Class {
 Puerta >> abrir [
    "Antes hacía: self abierta: true. Ahora delegamos en el estado."
    self estado abrir: self
+]
+
+{ #category : #'as yet unclassified' }
+Puerta >> calcularPosicionDesde: unaForma en: unPunto [
+	self visitada ifTrue:[^self].
+	self visitada:true.
+	unaForma num = self lado1 num "revisar"
+				ifTrue: 
+					[
+					self lado2 punto: unPunto.
+					self lado2 calcularPosicion]
+				ifFalse: 
+					[
+					self lado1 punto: unPunto.
+					self lado1 calcularPosicion]
 ]
 
 { #category : #initialization }
@@ -56,6 +72,7 @@ Puerta >> estado: anObject [
 Puerta >> initialize [
    super initialize.
    self estado: Cerrada new.  "por defecto, cada puerta empieza cerrada"
+	visitada:=false
 ]
 
 { #category : #accessing }
@@ -94,4 +111,16 @@ Puerta >> puedeEntrar: alguien [
    (alguien posicion = self lado1)
        ifTrue: [ self lado2 entrar: alguien ]
        ifFalse: [ self lado1 entrar: alguien ]
+]
+
+{ #category : #accessing }
+Puerta >> visitada [
+
+	^ visitada
+]
+
+{ #category : #accessing }
+Puerta >> visitada: anObject [
+
+	visitada := anObject
 ]

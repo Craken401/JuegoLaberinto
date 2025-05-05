@@ -22,6 +22,14 @@ Sur class >> new [
 ]
 
 { #category : #'as yet unclassified' }
+Sur >> calcularPosicionDesde: unaForma [
+	| unPunto |
+	unPunto := (unaForma punto x) @ (unaForma punto y+1).
+	unaForma sur calcularPosicionDesde: unaForma en: unPunto
+
+]
+
+{ #category : #'as yet unclassified' }
 Sur >> caminar:unBicho [
 	| pos |
 	pos := unBicho posicion.
